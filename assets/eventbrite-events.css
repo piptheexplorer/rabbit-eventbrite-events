@@ -1,0 +1,217 @@
+.ree-events-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--ree-columns, 3), minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.ree-event-card {
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.ree-event-image {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.ree-event-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 220ms ease;
+}
+
+.ree-event-card:hover .ree-event-image img {
+    transform: scale(1.04);
+}
+
+.ree-event-content {
+    padding: 1.25rem;
+}
+
+.ree-event-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.8rem;
+}
+
+.ree-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    background: #0f172a;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ree-badge-light {
+    background: #eef2ff;
+    color: #3730a3;
+}
+
+.ree-event-date {
+    margin: 0 0 0.5rem;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.ree-event-title {
+    margin: 0 0 0.7rem;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.2;
+}
+
+.ree-event-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ree-event-title a:hover {
+    text-decoration: underline;
+}
+
+.ree-event-venue,
+.ree-event-summary {
+    margin: 0 0 0.85rem;
+    color: #475569;
+}
+
+.ree-event-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.ree-event-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    background: #0f172a;
+    color: #fff !important;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.ree-event-button:hover {
+    opacity: 0.9;
+}
+
+.ree-event-button-secondary {
+    background: #ff4f00;
+}
+
+.ree-notice {
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    padding: 1rem;
+    background: #f8fafc;
+    color: #334155;
+}
+
+.ree-event-filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: end;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 18px;
+    background: #f8fafc;
+}
+
+.ree-filter-field label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ree-filter-field input,
+.ree-filter-field select {
+    width: 100%;
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
+    background: #fff;
+}
+
+.ree-filter-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.ree-single-details {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid rgba(15, 23, 42, 0.10);
+    border-radius: 18px;
+    background: #f8fafc;
+}
+
+.ree-single-details h2 {
+    margin-top: 0;
+}
+
+.ree-single-details dl {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.ree-single-details dl div {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.ree-single-details dt {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.ree-single-details dd {
+    margin: 0;
+    color: #475569;
+}
+
+@media (max-width: 900px) {
+    .ree-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ree-event-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .ree-events-grid,
+    .ree-event-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .ree-single-details dl div {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+}
